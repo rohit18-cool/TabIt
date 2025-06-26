@@ -3,150 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TabIt</title>
+    <title>Receipt Wallet</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="app-title">TabIt</h1>
-                <div class="header-actions">
-                    <button class="icon-button" id="scan-receipt-btn">
-                        <i class="fas fa-camera"></i>
-                    </button>
-                    <button class="icon-button" id="add-receipt-btn">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button class="icon-button">
-                        <i class="fas fa-cog"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Receipts Section -->
-            <section class="receipts-section">
-                <div class="section-header">
-                    <h2>Receipts</h2>
-                    <div class="filter-options">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="recent">Recent</button>
-                        <button class="filter-btn" data-filter="month">This Month</button>
-                    </div>
-                </div>
-                
-                <div class="receipts-grid">
-                    <!-- Empty State -->
-                    <div class="empty-state" id="empty-state">
-                        <div class="empty-icon">
-                            <i class="fas fa-receipt"></i>
-                        </div>
-                        <h3>No Receipts Yet</h3>
-                        <p>Scan your first receipt to get started</p>
-                        <button class="scan-first-btn" onclick="openCameraModal()">
-                            <i class="fas fa-camera"></i>
-                            Scan Receipt
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Quick Actions -->
-            <section class="quick-actions">
-                <div class="section-header">
-                    <h2>Quick Actions</h2>
-                </div>
-                
-                <div class="actions-grid">
-                    <div class="action-item">
-                        <div class="action-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <div class="action-title">Scan Receipt</div>
-                    </div>
-                    
-                    <div class="action-item">
-                        <div class="action-icon">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <div class="action-title">Analytics</div>
-                    </div>
-                    
-                    <div class="action-item">
-                        <div class="action-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="action-title">Search</div>
-                    </div>
-                    
-                    <div class="action-item">
-                        <div class="action-icon">
-                            <i class="fas fa-download"></i>
-                        </div>
-                        <div class="action-title">Export</div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-            <div class="nav-item active">
-                <i class="fas fa-receipt"></i>
-                <span>Receipts</span>
-            </div>
-            <div class="nav-item">
-                <i class="fas fa-chart-bar"></i>
-                <span>Analytics</span>
-            </div>
-            <div class="nav-item">
-                <i class="fas fa-search"></i>
-                <span>Search</span>
-            </div>
-            <div class="nav-item">
-                <i class="fas fa-user"></i>
-                <span>Profile</span>
-            </div>
-        </nav>
-
-        <!-- Camera Modal -->
-        <div class="camera-modal" id="camera-modal">
-            <div class="camera-content">
-                <div class="camera-header">
-                    <h3>Scan Receipt</h3>
-                    <button class="close-btn" id="close-camera">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="camera-viewfinder">
-                    <div class="camera-placeholder">
-                        <i class="fas fa-camera"></i>
-                        <p>Camera will open here</p>
-                        <p>Position receipt within the frame</p>
-                    </div>
-                    <div class="scan-overlay">
-                        <div class="scan-frame"></div>
-                    </div>
-                </div>
-                <div class="camera-controls">
-                    <button class="capture-btn" id="capture-receipt">
-                        <i class="fas fa-circle"></i>
-                    </button>
-                    <button class="gallery-btn" id="upload-receipt">
-                        <i class="fas fa-image"></i>
-                        Upload from Gallery
-                    </button>
-                </div>
+    <div class="wallet-container">
+        <div class="wallet-cards" id="wallet-cards">
+            <!-- Receipt cards will go here -->
+        </div>
+    </div>
+    <button class="camera-fab" id="open-camera-btn" title="Add Receipt">
+        <i class="fas fa-camera"></i>
+    </button>
+    <div class="camera-modal" id="camera-modal">
+        <div class="camera-modal-content">
+            <span class="close-modal" id="close-camera-modal">&times;</span>
+            <div class="camera-placeholder">
+                <i class="fas fa-camera-retro"></i>
+                <p>Camera UI Placeholder</p>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html> 

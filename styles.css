@@ -6,13 +6,12 @@
 }
 
 body {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #181a1b;
+    color: #fff;
+    font-family: 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
     min-height: 100vh;
-    color: #1d1d1f;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 .app-container {
@@ -548,8 +547,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
+    background: rgba(20, 20, 20, 0.85);
+    z-index: 200;
     display: none;
     align-items: center;
     justify-content: center;
@@ -561,12 +560,12 @@ body {
 }
 
 .camera-content {
-    background: white;
-    border-radius: 20px;
+    background: #232526;
+    border-radius: 24px;
     width: 100%;
     max-width: 400px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 
 .camera-header {
@@ -580,7 +579,7 @@ body {
 .camera-header h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1d1d1f;
+    color: #fff;
 }
 
 .close-btn {
@@ -594,12 +593,12 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: #86868b;
+    color: #fff;
 }
 
 .close-btn:hover {
     background: rgba(0, 0, 0, 0.1);
-    color: #1d1d1f;
+    color: #fff;
 }
 
 .camera-viewfinder {
@@ -612,14 +611,19 @@ body {
 }
 
 .camera-placeholder {
-    text-align: center;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.2rem;
+    margin-top: 40px;
 }
 
 .camera-placeholder i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    opacity: 0.7;
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    color: #444;
 }
 
 .camera-placeholder p {
@@ -917,4 +921,98 @@ body {
     .gallery-btn:hover {
         background: rgba(255, 255, 255, 0.2);
     }
+}
+
+.wallet-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wallet-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    overflow-x: auto;
+    padding: 40px 0;
+    width: 100vw;
+    scroll-snap-type: x mandatory;
+}
+
+.wallet-card {
+    min-width: 340px;
+    max-width: 340px;
+    height: 520px;
+    background: linear-gradient(135deg, #232526 0%, #1c1c1e 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    position: relative;
+    border: 1.5px solid #232526;
+    transition: transform 0.2s;
+}
+
+.wallet-card:active {
+    transform: scale(0.98);
+}
+
+.camera-fab {
+    position: fixed;
+    bottom: 36px;
+    right: 36px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #232526 0%, #1c1c1e 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.camera-fab:hover {
+    background: #232526;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+}
+
+.camera-modal-content {
+    background: #232526;
+    border-radius: 24px;
+    padding: 40px 32px 32px 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    min-width: 340px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-modal:hover {
+    opacity: 1;
 } 

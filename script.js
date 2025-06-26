@@ -1,6 +1,26 @@
 // TabIt - Receipt Scanner App
 document.addEventListener('DOMContentLoaded', function() {
     initApp();
+    const openCameraBtn = document.getElementById('open-camera-btn');
+    const cameraModal = document.getElementById('camera-modal');
+    const closeCameraModal = document.getElementById('close-camera-modal');
+
+    if (openCameraBtn && cameraModal && closeCameraModal) {
+        openCameraBtn.addEventListener('click', function() {
+            cameraModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+        closeCameraModal.addEventListener('click', function() {
+            cameraModal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+        cameraModal.addEventListener('click', function(e) {
+            if (e.target === cameraModal) {
+                cameraModal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });
 
 function initApp() {
