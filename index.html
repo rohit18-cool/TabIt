@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receipt Wallet</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TabIt</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wallet-container">
-        <div class="wallet-cards" id="wallet-cards">
-            <!-- Receipt cards will go here -->
+  <div class="wallet-container">
+    <header class="wallet-header">
+      <h1>TabIt</h1>
+    </header>
+    <main class="wallet-main">
+      <div class="receipt-card">
+        <div class="receipt-merchant">Starbucks</div>
+        <div class="receipt-details">
+          <span>Apr 20, 2024</span>
+          <span class="receipt-total">$8.50</span>
         </div>
-    </div>
-    <button class="camera-fab" id="open-camera-btn" title="Add Receipt">
-        <i class="fas fa-camera"></i>
-    </button>
-    <div class="camera-modal" id="camera-modal">
-        <div class="camera-modal-content">
-            <span class="close-modal" id="close-camera-modal">&times;</span>
-            <div class="camera-placeholder">
-                <i class="fas fa-camera-retro"></i>
-                <p>Camera UI Placeholder</p>
-            </div>
+        <div class="receipt-items">
+          <div>Coffee x2</div>
+          <div>Croissant x1</div>
         </div>
-    </div>
-    <script src="script.js"></script>
+      </div>
+      <div class="receipt-card">
+        <div class="receipt-merchant">Target</div>
+        <div class="receipt-details">
+          <span>Apr 18, 2024</span>
+          <span class="receipt-total">$42.99</span>
+        </div>
+        <div class="receipt-items">
+          <div>Groceries</div>
+        </div>
+      </div>
+      <div class="receipt-card">
+        <div class="receipt-merchant">Amazon</div>
+        <div class="receipt-details">
+          <span>Apr 15, 2024</span>
+          <span class="receipt-total">$120.00</span>
+        </div>
+        <div class="receipt-items">
+          <div>Headphones</div>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
-</html> 
+</html>
